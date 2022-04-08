@@ -31,7 +31,7 @@ const Contacts = () => {
       <button onClick={addToList}>Add</button>
 
       {contactList.map((contact) => (
-        <Contact name={contact.name} email={contact.email} />
+        <Contact key={contact.name} name={contact.name} email={contact.email} />
       ))}
     </div>
   );
