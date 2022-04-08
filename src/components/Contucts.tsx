@@ -8,6 +8,7 @@ interface IContact {
 
 const Contacts = () => {
   const [contact, setContact] = useState<IContact>({} as IContact);
+  const [contactList, setContactList] = useState<IContact[]>([]);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
@@ -15,7 +16,14 @@ const Contacts = () => {
 
   return (
     <div>
-      <input type="Name" value={contact.name} name="name" onChange={onChange} />
+      <input type="name" value={contact.name} name="name" onChange={onChange} />
+      <input
+        type="email"
+        value={contact.email}
+        name="email"
+        onChange={onChange}
+      />
+      <button>Add</button>
       <Contact name={contact.name} email={contact.email} />
     </div>
   );
