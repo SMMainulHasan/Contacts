@@ -21,15 +21,21 @@ const Contacts = () => {
   return (
     <div>
       <h1>👨Contacts</h1>
-      <input type="name" value={contact.name} name="name" onChange={onChange} />
-      <input
-        type="email"
-        value={contact.email}
-        name="email"
-        onChange={onChange}
-      />
-      <button onClick={addToList}>Add</button>
-
+      <div>
+        <input
+          type="text"
+          name="name"
+          value={contact.name}
+          onChange={onChange}
+        />
+        <input
+          type="email"
+          name="email"
+          value={contact.email}
+          onChange={onChange}
+        />
+        <input onClick={addToList} type="submit" value={"Add"} />
+      </div>
       {contactList.map((contact) => (
         <Contact key={contact.name} name={contact.name} email={contact.email} />
       ))}
